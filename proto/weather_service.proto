@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package weather_service;
+
+import "google/protobuf/empty.proto";
+
+service WeatherService {
+    rpc GetWeatherProviders (google.protobuf.Empty) returns (WeatherProviders);
+}
+
+message WeatherProviders {
+  repeated string providers = 1;
+}
