@@ -5,9 +5,26 @@ package weather_service;
 import "google/protobuf/empty.proto";
 
 service WeatherService {
-    rpc GetWeatherProviders (google.protobuf.Empty) returns (WeatherProviders);
+  rpc GetWeatherProviders (google.protobuf.Empty) returns (WeatherProviders);
+  rpc GetLocations (LocationSearch) returns (Locations);
 }
 
 message WeatherProviders {
   repeated string providers = 1;
+}
+
+message LocationSearch {
+  string query = 1;
+}
+
+message Location {
+  string name = 1;
+  string state = 2;
+  string country = 3;
+  float lon = 4;
+  float lat = 5;
+}
+
+message Locations {
+  repeated Location locations = 1;
 }
