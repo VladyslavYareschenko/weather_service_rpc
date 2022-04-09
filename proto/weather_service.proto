@@ -37,7 +37,7 @@ message WeatherQueryParams {
 }
 
 message WeatherForecast {
-  float dt = 1;
+  int64 dt = 1;
   float mit_t = 2;
   float max_t = 3;
   float avg_t = 4;
