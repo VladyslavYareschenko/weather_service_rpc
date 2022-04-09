@@ -7,6 +7,7 @@ import "google/protobuf/empty.proto";
 service WeatherService {
   rpc GetWeatherProviders (google.protobuf.Empty) returns (WeatherProviders);
   rpc GetLocations (LocationSearchParams) returns (Locations);
+  rpc GetWeather (WeatherQueryParams) returns (WeatherForecast);
 }
 
 message WeatherProviders {
@@ -27,4 +28,18 @@ message Location {
 
 message Locations {
   repeated Location locations = 1;
+}
+
+message WeatherQueryParams {
+  string provider = 1;
+  Location Location = 2;
+  string date = 3;
+}
+
+message WeatherForecast {
+  float dt = 1;
+  float mit_t = 2;
+  float max_t = 3;
+  float avg_t = 4;
+  string condition = 5;
 }
