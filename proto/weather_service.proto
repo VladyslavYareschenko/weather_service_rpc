@@ -32,7 +32,7 @@ message Locations {
 
 message WeatherQueryParams {
   string provider = 1;
-  Location Location = 2;
+  Location location = 2;
   string date = 3;
 }
 
